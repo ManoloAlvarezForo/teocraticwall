@@ -1,0 +1,24 @@
+<!-- preaching-day-detail -->
+<ActionBar style="background-color:#58218b; color: white;" title="{{preachingDay.dayOfWeek}} {{preachingDay.day}} de {{preachingDay.month}}" class="action-bar">
+    <NavigationButton android.systemIcon="ic_menu_back" [nsRouterLink]="['/preaching', 1]"></NavigationButton>
+</ActionBar>
+<StackLayout class="page">
+    <FlexboxLayout style="padding: 80px;" flexDirection="column">
+        <FlexboxLayout flexDirection="column" style="padding: 40px;">
+            <Label height="25" row="0" col="0" text="Lugar" style="margin-bottom: 2; font-weight:bold; vertical-align: center; font-size: 17;"></Label>
+            <Label height="25" row="1" col="0" text="{{preachingDay.place}}" style="vertical-align: center; font-size: 15;"></Label>
+        </FlexboxLayout>
+        <FlexboxLayout flexDirection="column" style="padding: 40px;">
+            <Label height="25" row="0" col="0" text="Conductor" style="margin-bottom: 2; font-weight:bold; vertical-align: center; font-size: 17;"></Label>
+            <Label height="25" row="1" col="0" text="{{preachingDay.preachingLead}}" style="vertical-align: center; font-size: 15;"></Label>
+        </FlexboxLayout>
+        <FlexboxLayout flexDirection="column" style="padding: 40px;">
+            <Label height="25" row="0" col="0" text="Hora" style="margin-bottom: 2; font-weight:bold; vertical-align: center; font-size: 17;"></Label>
+            <Label height="25" row="1" col="0" text="{{preachingDay.time}}" style="vertical-align: center; font-size: 15;"></Label>
+        </FlexboxLayout>
+        <FlexboxLayout flexDirection="column" style="padding: 40px;">
+            <Label height="25" row="0" col="0" text="Territorio" style="margin-bottom: 2; font-weight:bold; vertical-align: center; font-size: 17;"></Label>
+            <Label height="25" row="1" col="0" text="{{preachingDay.territory}}" style="vertical-align: center; font-size: 15;"></Label>
+        </FlexboxLayout>
+    </FlexboxLayout>
+</StackLayout>

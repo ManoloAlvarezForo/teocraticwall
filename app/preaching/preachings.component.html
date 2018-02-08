@@ -1,0 +1,22 @@
+<!-- preaching -->
+<ActionBar style="background-color:#58218b; color: white;" title="{{preachingTitle}}" class="action-bar">
+    <NavigationButton android.systemIcon="ic_menu_back" [nsRouterLink]="['/options']"></NavigationButton>
+</ActionBar>
+<StackLayout class="page">
+    <ListView [items]="preachings">
+        <ng-template let-item="item">
+            <FlexboxLayout [nsRouterLink]="['/preaching', item.id]">
+                <GridLayout rows="*" columns="100, *">
+                    <GridLayout height="50" width="50" row="0" col="0" style="border-radius: 50% 50% 50% 50%;">
+                        <Border borderRadius="50%" borderWidth="2" borderColor="gray">
+                            <Label row="0" col="0" text="P" style="border-radius: 50% 50% 50% 50%; text-align: center; vertical-align: center; color: gray; font-size: 20;"></Label>
+                        </Border>
+                    </GridLayout>
+                    <GridLayout row="0" col="1">
+                        <Label row="0" col="0" [text]="item.weekName" textWrap="true" style="text-align: left; vertical-align: center; font-size: 16; padding-right: 25; padding-top: 25; padding-bottom: 25;"></Label>
+                    </GridLayout>
+                </GridLayout>
+            </FlexboxLayout>
+        </ng-template>
+    </ListView>
+</StackLayout>

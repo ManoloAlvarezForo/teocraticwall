@@ -1,0 +1,20 @@
+<!-- options -->
+<ActionBar  style="background-color:#58218b; color: white;" title="Teocratic Wall" class="action-bar">
+</ActionBar>
+
+<StackLayout class="page">
+    <ListView [items]="options">
+        <ng-template let-item="item">
+            <FlexboxLayout [nsRouterLink]="[item.route]">
+                <GridLayout rows="*" columns="100, *">
+                    <GridLayout  borderRadius="80%" borderWidth="2" borderColor="{{item.color}}" height="50" width="50" row="0" col="0">
+                          <Label row="0" col="0" [text]="item.word" style="border-radius: 50% 50% 50% 50%; text-align: center; vertical-align: center; font-size: 20;" style.color="{{item.color}}"></Label>
+                    </GridLayout>
+                    <GridLayout row="0" col="1">
+                    <Label row="0" col="0" [text]="item.name" textWrap="true" style="text-align: left; vertical-align: center; font-size: 16; padding-right: 25; padding-top: 25; padding-bottom: 25;"></Label>
+                    </GridLayout>
+                </GridLayout>
+            </FlexboxLayout>
+        </ng-template>
+    </ListView>
+</StackLayout>

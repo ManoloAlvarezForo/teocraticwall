@@ -1,0 +1,39 @@
+<!-- preaching-detail -->
+<ActionBar style="background-color:#58218b; color: white;" title="{{preaching.weekName}}" class="action-bar">
+    <NavigationButton android.systemIcon="ic_menu_back" [nsRouterLink]="['/preachings']"></NavigationButton>
+</ActionBar>
+<StackLayout class="page">
+    <ListView [items]="preaching.preachingsDays">
+        <ng-template let-item="item">
+            <FlexboxLayout [nsRouterLink]="['/preachingDay', item.id]">
+                <GridLayout rows="*" columns="100, *">
+                    <GridLayout height="50" width="50" row="0" col="0" style="border-radius: 50% 50% 50% 50%;">
+                            <Border borderRadius="50%" borderWidth="2" borderColor="{{item.color}}">
+                              <Label row="0" col="0" [text]="item.word" style="border-radius: 50% 50% 50% 50%; text-align: center; vertical-align: center; font-size: 20;" style.color="{{item.color}}"></Label>
+                            </Border>
+                    </GridLayout>
+                    <FlexboxLayout height="70" row="0" col="1" style="align-content:center ; align-items:center;">
+                        <FlexboxLayout height="66%" flexDirection="column" >
+                            <FlexboxLayout>
+                                <GridLayout style="padding:0px; margin:0px;" width="70%" style.height="30">
+                                    <Label row="0" col="0" text="{{item.dayOfWeek}} {{item.day}} de {{item.month}}" style="font-weight:bold; vertical-align: center; font-size: 17;"></Label>
+                                </GridLayout>
+                                <GridLayout style="padding:0px; margin:0px;" width="30%" style.height="30">
+                                    <Label row="0" col="0" text="{{item.time}}" style="font-weight:bold; text-align: center; vertical-align: center; font-size: 15;"></Label>
+                                </GridLayout>
+                            </FlexboxLayout>
+                            <FlexboxLayout>
+                                <GridLayout style="padding:0px; margin:0px;" width="70%" style.height="30">
+                                    <Label row="0" col="0" text="{{item.place}}" style="vertical-align: center;  font-size: 15;"></Label>
+                                </GridLayout>
+                                <GridLayout style="padding:0px; margin:0px;" width="30%" style.height="30">
+                                    <Label row="0" col="0" text="{{item.moment}}" style="text-align: center; vertical-align: center; font-size: 15;"></Label>
+                                </GridLayout>
+                            </FlexboxLayout>
+                        </FlexboxLayout>
+                    </FlexboxLayout>
+                </GridLayout>
+            </FlexboxLayout>
+        </ng-template>
+    </ListView>
+</StackLayout>
